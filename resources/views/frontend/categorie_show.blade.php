@@ -11,7 +11,8 @@
                     @foreach($categories as $category)
                     <div class="col-md-3">
                         <div class="card">
-                          <a href=""><img src="{{asset('images/category/'.$category->photo)}}" class="card-img-top" alt="{{$category->title}}" height="250px" /></a>
+                          <a href="{{route('single_cat_page',['id'=>$category->id])}}"><img src="{{asset('images/category/'.$category->photo)}}" 
+                            class="card-img-top" alt="{{$category->title}}" height="250px" /></a>
                           <div class="card-body">
                             <h5 class="card-title"><a href="">{{$category->title}}</a></h5>
                           </div>
