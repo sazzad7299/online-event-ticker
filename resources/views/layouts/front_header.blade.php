@@ -21,9 +21,26 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link">
+                <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{route('show_cat_all')}}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                    Events
+                  </a>
+
+                  <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                   @foreach($header_categories as $cat)
+                    <a class="dropdown-item" href="{{route('single_cat_page',['id'=>$cat->id])}}">{{$cat->title}}</a>
+                    @endforeach
+                  </div>
+                 
+              </li>
+              </a>
+            </li>
+            
+            {{-- <li class="nav-item">
               <a class="nav-link" href="{{route('show_cat_all')}}">
                 Events
-              </a>
+              </a> --}}
             </li>
             <li class="nav-item">
               <a class="nav-link"  href="{{route('schedules')}}">
