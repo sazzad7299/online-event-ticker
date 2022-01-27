@@ -61,10 +61,10 @@ Route::group(['middleware'=>['auth']],function(){
 
 
 
-Route::get('/dashboard',[AdminController::class, 'index'])->name('admin.home');
-Route::get('/admin/login',[AdminController::class, 'loginForm'])->name('admin.login');
-Route::post('/login-save',[AdminController::class, 'submit_login'])->name('admin.loginSave');
-Route::get('/login/logout',[AdminController::class, 'logout'])->name('admin.logout');
+// Route::get('/dashboard',[AdminController::class, 'index'])->name('admin.home');
+// Route::get('/admin/login',[AdminController::class, 'loginForm'])->name('admin.login');
+// Route::post('/login-save',[AdminController::class, 'submit_login'])->name('admin.loginSave');
+// Route::get('/login/logout',[AdminController::class, 'logout'])->name('admin.logout');
 
 
 

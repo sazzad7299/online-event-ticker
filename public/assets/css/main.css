@@ -2297,7 +2297,7 @@ a.back-to-top:hover, a.back-to-top:focus {
     width: 18%;
     float: left;
   }
-.right-sidebar  ul {
+.right-sidebar  ul,.nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -2305,7 +2305,7 @@ a.back-to-top:hover, a.back-to-top:focus {
     background-color: #f1f1f1;
   }
 
-.right-sidebar  li a {
+.right-sidebar  li a,.nav li a {
     display: block;
     color: #000;
     padding: 8px 16px;
@@ -2317,11 +2317,33 @@ a.back-to-top:hover, a.back-to-top:focus {
     background-color: #555;
     color: white;
   }
-  .right-sidebar  li a.active{
+  .right-sidebar  li a.active, .nav li a.active{
     background-color: rgb(45, 5, 138);
     color: white;
     font-weight: 900;
   }
   .card-description{
     font: 24px sans-serif;
+  }
+  .nav{
+    display: none;
+  }
+  /* resposive */
+  @media screen and (max-width: 992px) {
+    .right-sidebar {
+      display: none;
+    }
+    .nav{
+      display: inline;
+      float: left;
+    }
+    .nav ul{
+      width: 40px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .dashboard1 {
+      width: 100%;
+    }
+
   }
