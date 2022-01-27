@@ -40,7 +40,7 @@ class EventController extends Controller
             'price'=>'required',
 
             'start_date'=>'required|after_or_equal:today',
-            'end_date'=>'required|after:start_date',
+            'end_date'=>'required|after_or_equal:start_date',
 
 
         ]);
