@@ -46,7 +46,8 @@
                     {{  $user->phone }}
                     </td>
                     <td>
-                    <a href=""><em class="fas fa-edit"></em></a>
+                    <a href="" ><em class="fas fa-edit" style="padding:5px; color: rgb(65, 63, 226);background:rgb(255, 195, 56)"></em></a>
+                    <a href="" ><em class="fas fa-trash" style="padding:5px; color: red;background:orange"></em></a>
                     </td>
                 </tr>
             @endforeach

@@ -66,7 +66,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEvent"
             aria-expanded="true" aria-controls="collapseEvent">
-            <i class="fas fa-fw fa-wrench"></i>
+            <em class="fas fa-fw fa-wrench"></em>
             <span>Event</span>
         </a>
         <div id="collapseEvent" class="collapse" aria-labelledby="headingUtilities"
@@ -81,8 +81,14 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.users') }}">
-            <i class="fas fa-users"></i>
+            <em class="fas fa-users"></em>
             <span>Users</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.orders') }}">
+            <em class="fas fa-shopping-cart"></em>
+            <span>Orders</span>
         </a>
     </li>
     

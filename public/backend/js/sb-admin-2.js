@@ -52,5 +52,6 @@
     }, 1000, 'easeInOutExpo');
     e.preventDefault();
   });
+ 
 
 })(jQuery); // End of use strict

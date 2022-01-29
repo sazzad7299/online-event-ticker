@@ -87,6 +87,11 @@ Route::prefix('admin')->group(function(){
         // User Controll
         Route::get('/users',[UserController::class,'allUser'])->name('admin.users');
 
+        //order controlling
+        Route::get('/orders',[AdminController::class,'orders'])->name('admin.orders');
+        Route::get('/orders/status/{id}/{status}',[AdminController::class,'status'])->name('admin.status');
+        Route::get('/orders/details/{id}',[AdminController::class, 'orderDetails'])->name('admin.details');
+
 
        
     });
