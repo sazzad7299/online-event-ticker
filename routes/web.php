@@ -33,8 +33,8 @@ Route::get('/event/{id}',[EventController::class,'viewEvent'])->name('viewEvent'
 
 
 
-
 Route::get('/categories',[CategoriesShowController::class,'all_category'])->name('show_cat_all');
+Route::get('/single/category/{id}',[CategoriesShowController::class,'single_cat_page'])->name('single_cat_page');
 
 
 //backend start
@@ -101,11 +101,6 @@ Route::prefix('admin')->group(function(){
 // Route::get('/admin/login',[AdminController::class, 'loginForm'])->name('admin.login');
 // Route::post('/login-save',[AdminController::class, 'submit_login'])->name('admin.loginSave');
 // Route::get('/login/logout',[AdminController::class, 'logout'])->name('admin.logout');
-
-
-
-
-
 
 //Category Controller
 // Route::get('/category-all',[CategoriesController::class,'allCategory'])->name('allCategory');
