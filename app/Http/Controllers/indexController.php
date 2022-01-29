@@ -12,7 +12,8 @@ class IndexController extends Controller
         $sliders = Slider::where('status','1')->get();
         $sliderCount = Slider::where('status','1')->count();
         $event = Event::where('status','active')->take(6)->get();
-        return view('index')->with(compact('sliders','sliderCount','event'));
+        $events =Event::where('status','active')->orderBy('start_date', 'asc')->take(3)->get();
+        return view('index')->with(compact('sliders','sliderCount','event','events'));
     }
 
     public function about(){
@@ -24,7 +25,8 @@ class IndexController extends Controller
     }
 
     public function schedules(){
-        return view('schedules');
+        $events =Event::where('status','active')->orderBy('start_date', 'asc')->take(6)->get();
+        return view('schedules')->with(compact('events'));
     }
     
 }

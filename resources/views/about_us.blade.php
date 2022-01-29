@@ -9,7 +9,7 @@
           <div class="row">
             <div class="col-12">
               <div class="section-title-header text-center">
-                <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">About This Events</h1>
+                <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">About Us</h1>
                 <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
               </div>
             </div>
@@ -49,95 +49,25 @@
         </div>
       </section>
       <!-- About Section End -->
-
-            <!-- Services Section Start -->
-            <section id="services" class="services section-padding">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="section-title-header text-center">
-                      <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Why You Choose Us?</h1>
-                      <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row services-wrapper">
-                  <!-- Services item -->
-                  <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-                    <div class="services-item wow fadeInDown" data-wow-delay="0.2s">
-                      <div class="icon">
-                        <i class="lni-heart"></i>
-                      </div>
-                      <div class="services-content">
-                        <h3><a href="#">Get Inspired</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Services item -->
-                  <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-                    <div class="services-item wow fadeInDown" data-wow-delay="0.4s">
-                      <div class="icon">
-                        <i class="lni-gallery"></i>
-                      </div>
-                      <div class="services-content">
-                        <h3><a href="#">Meet New Faces</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Services item -->
-                  <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-                    <div class="services-item wow fadeInDown" data-wow-delay="0.6s">
-                      <div class="icon">
-                        <i class="lni-envelope"></i>
-                      </div>
-                      <div class="services-content">
-                        <h3><a href="#">Fresh Tech Insights</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Services item -->
-                  <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-                    <div class="services-item wow fadeInDown" data-wow-delay="0.8s">
-                      <div class="icon">
-                        <i class="lni-cup"></i>
-                      </div>
-                      <div class="services-content">
-                        <h3><a href="#">Networking Session</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                      </div>
-                    </div>
-                  </div>
-                   <!-- Services item -->
-                  <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-                    <div class="services-item wow fadeInDown" data-wow-delay="1s">
-                      <div class="icon">
-                        <i class="lni-user"></i>
-                      </div>
-                      <div class="services-content">
-                        <h3><a href="#">Global Event</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                      </div>
-                    </div>
-                  </div>
-                   <!-- Services item -->
-                  <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-                    <div class="services-item wow fadeInDown" data-wow-delay="1.2s">
-                      <div class="icon">
-                        <i class="lni-bubble"></i>
-                      </div>
-                      <div class="services-content">
-                        <h3><a href="#">Free Swags</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <!-- Subscribe Area Start -->
+      <div id="subscribe" class="section-padding">
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-7">
+              <div class="subscribe-inner wow fadeInDown" data-wow-delay="0.3s">
+                <h2 class="subscribe-title">Sign Up For Our Newsletter</h2>
+                <form class="text-center form-inline">
+                  <input class="mb-20 form-control" name="email" placeholder="Enter Your Email Here">
+                  <button type="submit" class="btn btn-common sub-btn" data-style="zoom-in" data-spinner-size="30" name="submit" id="submit">
+                  <span class="ladda-label"><i class="lni-check-box"></i> Submit</span>
+                  </button>
+                </form>
               </div>
-            </section>
-            <!-- Services Section End -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Subscribe Area End -->
             
         
 @endsection

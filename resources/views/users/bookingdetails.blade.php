@@ -11,11 +11,11 @@
       <li><a href="{{ route('profile') }}">Profile</a></li>
     </ul>
   </div>
-  <div class="nav">
+  <div class="navb">
     <ul>
       <li><a href="{{ route('home') }}" ><em class="lni lni-home"></em></a></li>
-      <li><a href="#" class="active"><em class="lni lni-home"></em></a></li>
-      <li><a href="{{ route('profile') }}"><em class="lni lni-home"></em></a></li>
+      <li><a href="#" class="active"><em class="lni lni-cart-full"></em></a></li>
+      <li><a href="{{ route('profile') }}"><em class="lni lni-user"></em></a></li>
     </ul>
   </div>
   <div class="content">

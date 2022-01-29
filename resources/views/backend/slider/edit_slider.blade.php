@@ -5,7 +5,7 @@
  <!-- Begin Page Content -->
     <div class="container-fluid">
         <div class="container-fluid">
-         <form enctype="multipart/form-data" class="form-horizontal" method="post" action="{{ url('edit-slider/'.$bannerDetails->id) }}" name="edit_banner" id="edit_banner" novalidate="novalidate">{{ csrf_field() }}
+         <form enctype="multipart/form-data" class="form-horizontal" method="post" action="{{ url('admin/edit-slider/'.$bannerDetails->id) }}" name="edit_banner" id="edit_banner" novalidate="novalidate">{{ csrf_field() }}
           <div class="row">
                 <div class="col-md-8">
                     <div class="card">
