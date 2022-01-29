@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrdersEvent extends Model
 {
+    protected $fillable = ['pay_status'];
     use HasFactory;
 }

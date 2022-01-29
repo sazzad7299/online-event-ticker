@@ -19,7 +19,6 @@
                     <table id="zero_config" class="table table-striped table-bordered">
                       <thead>
                         <tr class="text-center" style="background:rgb(35, 35, 245)">
-                          <th scope="col" class="text-white">Title</th>
                           <th scope="col" class="text-white">Banner ID</th>
                           <th scope="col" class="text-white">Title</th>
                           <th scope="col" class="text-white">Position</th>

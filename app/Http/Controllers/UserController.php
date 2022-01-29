@@ -17,6 +17,11 @@ class UserController extends Controller
         $user = User::where(['id'=>$id])->first();
         return view('users.profile')->with(compact('user'));
     }
+    public function allUser()
+    {
+        $users =User::all();
+        return view('backend.users.user')->with(compact('users'));
+    }
     public function updateDetails(Request $request)
     {
         $id = Auth::user()->id;
