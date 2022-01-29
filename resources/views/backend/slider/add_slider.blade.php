@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 class="h3 mb-0 text-gray-800">All Sliders</h1>
-          <a href="{{route('allEvent')}}"  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ><i
+          <a href="{{route('viewslider')}}"  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ><i
                   class=" text-white-50"></i>All Sliders</a>                  
       </div>
 
@@ -33,13 +33,13 @@
                             <div class="form-group row">
                                 <label for="fname" class="col-sm-3 text-right control-label col-form-label">Slider Heading(h1):</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="title"  required="true">
+                                    <input type="text" class="form-control" name="title" >
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="fname" class="col-sm-3 text-right control-label col-form-label">Slider Text(p)</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="text" id="text" required="true">
+                                    <input type="text" class="form-control" name="text" id="text">
                                 </div>
                             </div>
                             <div class="form-group row">

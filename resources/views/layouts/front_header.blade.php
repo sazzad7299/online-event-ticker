@@ -11,11 +11,11 @@
             <span class="icon-menu"></span>
             <span class="icon-menu"></span>
           </button>
-          <a href="{{route('index')}}" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+          <a href="{{route('index')}}" class="navbar-brand"><img src="{{ asset('assets/img/logo.png') }}" alt=""></a>
         </div>
         <div class="collapse navbar-collapse" id="main-navbar">
           <ul class="navbar-nav mr-auto w-100 justify-content-end">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{{route('index')}}">
                 Home
               </a>
@@ -76,7 +76,7 @@
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                    <a class="dropdown-item" href="/home">Dashboard5</a>
+                    <a class="dropdown-item" href="/home">Dashboard</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit()">

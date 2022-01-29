@@ -1,11 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.front_master')
 
 @section('content')
+<div class="dashboard " style="background:black;padding-top:70px"></div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('User Login') }} <a href="{{ route('register') }}" class="float-right">Create a new Account</a></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -58,7 +59,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link" style="color:black" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif

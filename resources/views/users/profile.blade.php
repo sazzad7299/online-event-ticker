@@ -4,14 +4,20 @@
 <div class="dashboard " style="background:black;padding-top:70px">
 </div>
 <div class="dashboard1">
-    <div class="right-sidebar">
-        <ul>
-            <li><a href="{{ route('home') }}" >Dashboard</a></li>
-            <li><a href="{{ route('booking') }}">Booking</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#" class="active">Profile</a></li>
-          </ul>
-    </div>
+  <div class="right-sidebar">
+    <ul>
+      <li><a href="{{ route('home') }}"  >Dashboard</a></li>
+      <li><a href="{{ route('booking') }}" >Booking</a></li>
+      <li><a href="#" class="active">Profile</a></li>
+    </ul>
+  </div>
+  <div class="navb">
+    <ul>
+      <li><a href="{{ route('home') }}" ><em class="lni lni-home"></em></a></li>
+      <li><a href="{{ route('booking') }}" ><em class="lni lni-cart-full"></em></a></li>
+      <li><a href="{{ route('profile') }}" class="active"><em class="lni lni-user"></em></a></li>
+    </ul>
+</div>
     <div class="content">
         <div class="grid-margin stretch-card">
             <div class="card">
