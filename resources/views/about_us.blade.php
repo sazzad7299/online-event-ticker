@@ -10,11 +10,11 @@
             <div class="col-12">
               <div class="section-title-header text-center">
                 <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">About Us</h1>
-                <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
+                <p class="wow fadeInDown" data-wow-delay="0.2s">Ticket Fair Event on Digital Market</p>
               </div>
             </div>
           </div>
-          <div class="row">
+          {{-- <div class="row">
             <div class="col-xs-12 col-md-6 col-lg-4">
               <div class="about-item">
                 <img class="img-fluid" src="assets/img/about/img1.jpg" alt="">
@@ -45,7 +45,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
       </section>
       <!-- About Section End -->

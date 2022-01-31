@@ -122,7 +122,7 @@
 
   
       <!-- Blog Section Start -->
-      <section id="blog" class="section-padding">
+      {{-- <section id="blog" class="section-padding">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -199,11 +199,11 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> --}}
       <!-- Blog Section End -->
   
       <!-- Subscribe Area Start -->
-      <div id="subscribe" class="section-padding">
+      {{-- <div id="subscribe" class="section-padding">
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-md-10 col-lg-7">
@@ -219,7 +219,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
       <!-- Subscribe Area End -->
   
 

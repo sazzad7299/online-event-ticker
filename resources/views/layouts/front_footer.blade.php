@@ -5,7 +5,11 @@
             <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
               <h3><img src="assets/img/logo.png" alt=""></h3>
               <p>
-                Aorem ipsum dolor sit amet elit sed lum tempor incididunt ut labore el dolore alg minim veniam quis nostrud ncididunt.
+               <strong>Ticket Fair</strong><br>
+               Ticket Fair is online platform where you can buy event ticket online and save your time.<br>
+               <strong>Location</strong>: City University, Pathopath,
+               Dhaka, Bangladesh
+
               </p>
             </div>
             <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
@@ -21,7 +25,7 @@
             <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
               <h3>RECENT POSTS</h3>
               <ul class="image-list">
-                <li>
+                {{-- <li>
                   <figure class="overlay">
                     <img class="img-fluid" src="assets/img/art/a1.jpg" alt="">
                   </figure>
@@ -38,7 +42,8 @@
                     <h6 class="post-title"><a href="blog-single.html">Lorem ipsm dolor sumit.</a></h6>
                     <div class="meta"><span class="date">October 12, 2018</span></div>
                   </div>
-                </li>
+                </li> --}}
+                <strong style="color:aliceblue"> We will show our recent blog here</strong>
               </ul>
             </div>
             <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.8s">
@@ -75,7 +80,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="site-info">
-                <p>© Designed and Developed by <a href="" rel="nofollow"></a></p>
+                <p>©2022 Designed and Developed by <a href="" rel="nofollow">City University</a></p>
               </div>      
             </div>
           </div>
