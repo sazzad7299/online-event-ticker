@@ -10,8 +10,12 @@
             <img src="{{ asset('images/event/'.$eventDetails->image) }}" alt="{{ $eventDetails->image }}">
         </div>
         <div class="col-md-5">
+            <div class="cover">
+                <h1>Book your Event</h1>
+                <p>Feel Free & Enjoy More</p>
+            </div>
             <div class="shortDetails">
-                <p><span>{{ $eventDetails->price }}৳</span> Per Person</p>
+                
                 <hr>
                 @if($eventDetails->seat ==0)
                 <p><em class="lni-cross-circle">Seat Not Available</em></p>
@@ -22,12 +26,12 @@
                 <p>Start Date:<?php echo date('d F',strtotime($eventDetails->start_date));?></p>
                 <p>End Date:<?php echo date('d F',strtotime($eventDetails->end_date));?></p>
                 
-
+                
             </div>
-            <div class="cover">
-                <h1>Book your Event</h1>
-                <p>Feel Free & Enjoy More</p>
+            <div class="shortDetails" style="margin:10px">
+                <p ><span >{{ $eventDetails->price }}৳</span> Per Person</p>
             </div>
+           
             <div class="booking">
                 
                 <form action="{{ url('cart/'.$eventDetails->id) }}">
