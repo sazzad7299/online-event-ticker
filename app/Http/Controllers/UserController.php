@@ -22,6 +22,29 @@ class UserController extends Controller
         $users =User::all();
         return view('backend.users.user')->with(compact('users'));
     }
+    public function edit(Request $request, $id=null)
+    {
+        $user = User::where(['id'=>$id])->first();
+        
+        if($request->isMethod('post')){
+            $data =$request->all();
+            // echo "<pre>"; print_r($data);die;
+            if(empty($request->phone)){
+                $phone =Null;
+            }else{
+                $phone = $request->phone;
+            }
+            $user = User::where(['id'=>$id])->update(['name'=>$data['name'],'phone'=>$phone,'email'=>$data['email'],'password'=>Hash::make($data['password'])]);
+            return redirect()->back()->with('flash_massage_success','Profile update Successfully');
+        }
+        
+        return view('backend.users.edit')->with(compact('user'));
+    }
+    public function deleteUser($id)
+    {
+        User::where(['id'=>$id])->delete();
+        return redirect()->back()->with('flash_massage_success','Delete User Successfully');
+    }
     public function updateDetails(Request $request)
     {
         $id = Auth::user()->id;

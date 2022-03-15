@@ -52,7 +52,7 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('home/booking', [UserController::class,'booking'])->name('booking');
     Route::get('home/booking/details/{id}', [UserController::class,'details'])->name('details');
 });
-
+Route::get('/admin/check_pwd',[AdminController::class,'chkPassword']);
 Route::prefix('admin')->group(function(){
     Route::middleware(['guest:admin'])->group(function () {
         Route::view('/login', 'admin.login')->name('admin.login');
@@ -60,7 +60,13 @@ Route::prefix('admin')->group(function(){
     });
     
     Route::middleware(['auth:admin'])->group(function () {
+        //profile Controller
         Route::get('/dashboard',[AdminController::class, 'index'])->name('admin.home');
+        Route::match(['get','post'],'profile',[AdminController::class,'profile'])->name('admin.profile');
+        Route::post('/profile/update',[AdminController::class,'updateDetails'])->name('admin.updateDetails');
+        Route::match(['get','post'],'/update-pwd',[AdminController::class,'updatePassword'])->name('updatePassword');
+        // Route::get('/check_pwd',[AdminController::class,'chkPassword']);
+
         Route::get('/logout',[AdminController::class, 'destroy'])->name('admin.logout');
         //category controller
         Route::get('/categories',[CategoriesController::class,'allCategory'])->name('allCategory');
@@ -86,6 +92,10 @@ Route::prefix('admin')->group(function(){
 
         // User Controll
         Route::get('/users',[UserController::class,'allUser'])->name('admin.users');
+        Route::match(['get','post'],'users/edit/{id}',[UserController::class,'edit'])->name('admin.edit');
+        Route::get('users/delete/{id}',[UserController::class,'deleteUser'])->name('admin.deleteUser');
+
+        
 
         //order controlling
         Route::get('/orders',[AdminController::class,'orders'])->name('admin.orders');
