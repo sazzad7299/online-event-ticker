@@ -6,7 +6,9 @@ use App\Models\User;
 use App\Models\Orders;
 use App\Models\OrdersEvent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class AdminController extends Controller
@@ -19,6 +21,50 @@ class AdminController extends Controller
             ]);
         }
         return redirect()->intended(route('admin.home'));
+    }
+    public function profile(Request $request, $id=null){
+        $id = Auth::user()->id;
+        $user = DB::table('admins')->where(['id'=>$id])->first();
+        return view('backend.profile')->with(compact('user'));
+        
+    }
+    public function updateDetails(Request $request)
+    {
+        $id = Auth::user()->id;
+        if($request->isMethod('post')){
+            $data =$request->all();
+
+            // echo "<pre>"; print_r($data);die;
+            $admin = DB::table('admins')->where(['id'=>$id])->update(['name'=>$data['name'],'email'=>$data['email']]);
+            return redirect()->back()->with('flash_massage_success','Profile update Successfully');
+        }
+    }
+    public function chkPassword(Request $request){
+        $data = $request->all();
+        
+        $user = DB::table('admins')->where(['id'=>1])->first();
+        // dd($userCount);
+        if(Hash::check($request->current_pwd,$user->password)){
+            echo "true"; die;
+        } else{
+            echo "false"; die;
+        }
+    }
+    public function updatePassword(Request $request)
+    {
+        if($request->isMethod('post')){
+            $data =$request->all();
+            
+        $id = Auth::user()->id;
+        $user = DB::table('admins')->where(['id'=>$id])->first();
+        if(Hash::check($request->current_pwd,$user->password)){
+            $password = Hash::make($data['new_pwd']);
+            DB::table('admins')->where(['id'=>$id])->update(['password'=>$password]);
+            return redirect('/admin/profile')->with('flash_massage_success','Password Update Successfully!');
+        } else{
+            return redirect('/home/profile')->with('flash_massage_error','Current Password is incorrect!');
+        }
+        }
     }
     public function index(){
         return view('backend.dashboard');
