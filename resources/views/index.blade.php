@@ -199,7 +199,7 @@
             </div>
           </div>
         </div>
-      </section> --}}
+      </section>  --}}
       <!-- Blog Section End -->
   
       <!-- Subscribe Area Start -->

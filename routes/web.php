@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\HallController;
+
 use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\AdminController;
-
 use App\Http\Controllers\backend\EventController;
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
@@ -28,6 +29,9 @@ Route::get('/about-us',[App\Http\Controllers\indexController::class, 'about'])->
 Route::get('/gallery',[App\Http\Controllers\indexController::class, 'gallery'])->name('gallery');
 Route::get('/schedules',[App\Http\Controllers\indexController::class, 'schedules'])->name('schedules');
 Route::get('/event/{id}',[EventController::class,'viewEvent'])->name('viewEvent');
+Route::get('/reservasion',[HallController::class,'frontView'])->name('viewHalls');
+Route::get('/reservasion/hall-findorfaild/{id}',[HallController::class,'singleHall'])->name('singleHall');
+Route::post('/reservasion/request/hall',[HallController:: class, 'reqHall'])->name('reqHall');
 
 //admin controlling
 
@@ -95,6 +99,11 @@ Route::prefix('admin')->group(function(){
         Route::match(['get','post'],'users/edit/{id}',[UserController::class,'edit'])->name('admin.edit');
         Route::get('users/delete/{id}',[UserController::class,'deleteUser'])->name('admin.deleteUser');
 
+        // hall add 
+        Route::match(['get','post'],'add-hall',[HallController::class, 'addhall'])->name('addHall');
+        Route::get('/view-hall',[HallController::class, 'viewHall'])->name('viewHall');
+        Route::match(['get','post'],'edit-hall/{id}',[HallController::class, 'editHall'])->name('editHall');
+        Route::match(['get','post'],'delete-hall/{id}',[HallController::class, 'deleteHall'])->name('deleteHall');
         
 
         //order controlling
@@ -106,21 +115,6 @@ Route::prefix('admin')->group(function(){
        
     });
 });
-
-//  Route::get('/dashboard',[AdminController::class, 'index'])->name('admin.home');
-// Route::get('/admin/login',[AdminController::class, 'loginForm'])->name('admin.login');
-// Route::post('/login-save',[AdminController::class, 'submit_login'])->name('admin.loginSave');
-// Route::get('/login/logout',[AdminController::class, 'logout'])->name('admin.logout');
-
-//Category Controller
-// Route::get('/category-all',[CategoriesController::class,'allCategory'])->name('allCategory');
-// Route::get('/category-form',[CategoriesController::class,'addCategoryForm'])->name('addCategoryForm');
-
-// Route::post('/add-category',[CategoriesController::class,'storeCategory'])->name('storeCategory');
-// Route::get('/delete-category/{id}',[CategoriesController::class,'deleteCategory'])->name('deleteCategory');
-// Route::get('/edit-category/{id}',[CategoriesController::class,'editCategory'])->name('editCategory');
-// Route::post('/update-category/{id}',[CategoriesController::class,'updateCategory'])->name('updateCategory');
-
 
 
 
