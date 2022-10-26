@@ -6,6 +6,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                @if(Session::has('success'))
+                    <p class="alert alert-info">{{ Session::get('success') }}</p>
+                    @endif
                 <div class="card-header">{{ __('User Login') }} <a href="{{ route('register') }}" class="float-right">Create a new Account</a></div>
 
                 <div class="card-body">

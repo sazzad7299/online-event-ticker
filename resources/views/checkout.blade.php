@@ -15,7 +15,7 @@
             <div class="col-md-4 card ">
                 <div class="container mt-4">
                     <h4>Cart({{ Cart::content()->count() }})</h4>
-                   
+
                     @foreach(Cart::content() as $row)
                     <tr>
                         <td>{{ $row->name }}</td>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="from-group">
                         <label for="name"> Email:</label>
-                        <input type="mail" class="form-control" name="email" value="{{ Auth::user()->email }}" style="text-transform: lowercase"required >
+                        <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" style="text-transform: lowercase"required >
                     </div>
                     <div class="from-group">
                         <label for="name"> Number:</label>
@@ -62,11 +62,11 @@
                         01786740107
                     </div>
                     <div class="payment_field">
-                        <input type="text" name="transaction_number" placeholder="Transaction Number" required>
+                        <input type="number" name="transaction_number" placeholder="Transaction Number" required>
                         <input type="text" name="transaction_id" placeholder="Transaction ID" required>
                     </div>
                     <button  type="submit" class="btn btn-success" onclick=" return selectPaymentMethod()">Check Out</button>
-                    
+
                    </form>
                 </div>
             </div>

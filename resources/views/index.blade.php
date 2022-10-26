@@ -23,7 +23,7 @@
       </section>
       <!-- Coundown Section End -->
 
-  
+
       <!-- About Section Start -->
       <section id="about" class="section-padding">
         <div class="container">
@@ -42,8 +42,8 @@
                 <img class="img-fluid" src="{{ asset('images/event/'.$item->image) }}" alt="">
                 <div class="about-text">
                   <h3><a href="#">{{ $item->title }}</a></h3>
-                  <h5>  {{ $item->price }}৳</h5>
-                  <p>{!! Str::limit($item->detail, 200)  !!}</p> <br>
+                  <h5>Price:{{ $item->price }}৳   Seat:{{ $item->seat }} </h5>
+                  <p></p> <br>
                   @if($item->seat ==0)
                   <button type="button" class="btn btn-common btn-rm" disabled>Not Available</button>
                   <a class="btn btn-common btn-rm" href="{{ url('event/'.$item->id) }}">View Details</a>
@@ -60,7 +60,7 @@
         </div>
       </section>
       <!-- About Section End -->
-  
+
       <!-- Schedule Section Start -->
       <section id="schedules" class="schedule section-padding">
         <div class="container">
@@ -99,7 +99,7 @@
                         <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                           <div class="images-box">
                             <img class="img-fluid" src="{{ asset('images/event/'.$item->image) }}" alt="">
-                          </div>                     
+                          </div>
                           <h4>{{ $item->title }}</h4>
                           <h5 class="name">{{ $item->venue }}</h5>
                         </div>
@@ -120,7 +120,7 @@
       </section>
       <!-- Schedule Section End -->
 
-  
+
       <!-- Blog Section Start -->
       {{-- <section id="blog" class="section-padding">
         <div class="container">
@@ -188,7 +188,7 @@
                     </a>
                   </h3>
                   <div class="meta-tags">
-                    <span class="date">Jan 20, 2018</span> 
+                    <span class="date">Jan 20, 2018</span>
                     <span class="comments">| <a href="#"> by Cindy Jefferson</a></span>
                   </div>
                 </div>
@@ -201,7 +201,7 @@
         </div>
       </section>  --}}
       <!-- Blog Section End -->
-  
+
       <!-- Subscribe Area Start -->
       {{-- <div id="subscribe" class="section-padding">
         <div class="container">
@@ -221,6 +221,6 @@
         </div>
       </div> --}}
       <!-- Subscribe Area End -->
-  
+
 
 @endsection
