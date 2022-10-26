@@ -7,16 +7,16 @@
       <div class="card-body">
         <a id="complete" class="card-title btn btn-primary m-2 text-white">Completed ({{ $comorders->count() }})</a><a id="pending"  class="card-title btn btn-danger m-2 text-white">Pending ({{ $pendingorders->count() }})</a>
         <p class="card-description">
-            @if(Session::has('message'))  
+            @if(Session::has('message'))
             <div class="alert alert-success alert-block">
-                <button type="button" class="close" data-dismiss="alert">×</button> 
+                <button type="button" class="close" data-dismiss="alert">×</button>
                 <strong>{!! session('message') !!}</strong>
             </div>
         @endif
         </p>
         <div class="table-responsive">
           <table class="table table-striped">
-            <thead> 
+            <thead>
                 <tr>
                     <th>
                         #Id
@@ -74,7 +74,7 @@
                 @foreach ($pendingorders as $order)
                     <tr>
                         <td>
-                        {{ $order->id }} 
+                        {{ $order->id }}
                         </td>
                         <td>
                         {{ $order->user_email }}
@@ -100,6 +100,7 @@
                                 </ul>
                             </span>
                         </td>
+                        <td><a href="{{ url('admin/orders/details/'.$order->id) }}" class="btn btn-warning"> <em class="fas fa-eye"></em></a></td>
                     </tr>
                 @endforeach
                 </tbody>

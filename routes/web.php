@@ -1,14 +1,17 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+
 use App\Http\Controllers\HallController;
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\EventController;
 use App\Http\Controllers\backend\CategoriesController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\frontend\CategoriesShowController;
 
 /*
@@ -43,12 +46,20 @@ Route::get('/single/category/{id}',[CategoriesShowController::class,'single_cat_
 
 //backend start
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 // User Controlling
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::group(['middleware'=>['auth']],function(){
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::group(['middleware'=>['auth', 'verified']],function(){
     Route::get('/home/profile',[UserController::class,'profile'])->name('profile');
     Route::post('/home/update',[UserController::class,'updateDetails'])->name('updateDetails');
     Route::get('/home/check_pwd',[UserController::class,'chkPassword'])->name('chkPassword');
@@ -56,13 +67,17 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('home/booking', [UserController::class,'booking'])->name('booking');
     Route::get('home/booking/details/{id}', [UserController::class,'details'])->name('details');
 });
+
+
+
+
 Route::get('/admin/check_pwd',[AdminController::class,'chkPassword']);
 Route::prefix('admin')->group(function(){
     Route::middleware(['guest:admin'])->group(function () {
         Route::view('/login', 'admin.login')->name('admin.login');
         Route::post('login', [AdminController::class,'store'])->name('admin.login');
     });
-    
+
     Route::middleware(['auth:admin'])->group(function () {
         //profile Controller
         Route::get('/dashboard',[AdminController::class, 'index'])->name('admin.home');
@@ -79,7 +94,7 @@ Route::prefix('admin')->group(function(){
         Route::get('/delete-category/{id}',[CategoriesController::class,'deleteCategory'])->name('deleteCategory');
         Route::get('/edit-category/{id}',[CategoriesController::class,'editCategory'])->name('editCategory');
         Route::post('/update-category/{id}',[CategoriesController::class,'updateCategory'])->name('updateCategory');
-        
+
         //Event Routing
         Route::get('/event-all',[EventController::class,'allEvent'])->name('allEvent');
         Route::get('/event-form',[EventController::class,'addeventForm'])->name('addEventForm');
@@ -99,12 +114,12 @@ Route::prefix('admin')->group(function(){
         Route::match(['get','post'],'users/edit/{id}',[UserController::class,'edit'])->name('admin.edit');
         Route::get('users/delete/{id}',[UserController::class,'deleteUser'])->name('admin.deleteUser');
 
-        // hall add 
+        // hall add
         Route::match(['get','post'],'add-hall',[HallController::class, 'addhall'])->name('addHall');
         Route::get('/view-hall',[HallController::class, 'viewHall'])->name('viewHall');
         Route::match(['get','post'],'edit-hall/{id}',[HallController::class, 'editHall'])->name('editHall');
         Route::match(['get','post'],'delete-hall/{id}',[HallController::class, 'deleteHall'])->name('deleteHall');
-        
+
 
         //order controlling
         Route::get('/orders',[AdminController::class,'orders'])->name('admin.orders');
@@ -112,7 +127,7 @@ Route::prefix('admin')->group(function(){
         Route::get('/orders/details/{id}',[AdminController::class, 'orderDetails'])->name('admin.details');
 
 
-       
+
     });
 });
 
