@@ -23,17 +23,15 @@
                 @csrf
                 <input type="hidden" name="hall_name" value="{{ $hall->name }}">
                 <div class="row mb-3">
-                    
+
                     <input id="name" type="text" class="form-control col-md-5" name="name" placeholder="Enter Your Name" required>
                     <input id="email" type="email" class="form-control col-md-5"  name="email" placeholder="Enter Your Email"  required>
                     <input id="contact" type="number" name="contact" class="form-control col-md-5" placeholder="Phone Number" required>
                     <input id="date" type="date" name="date" class="form-control col-md-5" placeholder="Select Date" required>
                     <select name="ocation" id="ocation" class="form-control col-md-5" required>
                         <option value="Birthday">Birthday</option>
-                        <option value="Birthday">Birthday</option>
-                        <option value="Birthday">Birthday</option>
-                        <option value="Birthday">Birthday</option>
-                        <option value="Birthday">Birthday</option>
+                        <option value="Marriage">Marriage</option>
+                        <option value="Party">Party</option>
                     </select>
                     <select name="time" id="ocation" class="form-control col-md-5" required>
                         <option value="Day">Select Time</option>
@@ -52,7 +50,7 @@
             </form>
 
     </div>
-    
+
 </div>
 
 @endsection
