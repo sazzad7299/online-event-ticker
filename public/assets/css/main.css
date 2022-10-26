@@ -2345,3 +2345,54 @@ a.back-to-top:hover, a.back-to-top:focus {
     }
 
   }
+
+  /* hall booking section  */
+.hall-banner{
+ width: 100%;
+ text-align: center;
+ overflow: hidden;
+ background-size: cover;
+ padding: 10% 0%;
+}
+.hall-banner h1{
+  color: black;
+  padding: 3px;
+  display: inline;
+  background-color: rgba(204, 204, 204, 0.671);
+}
+.price-area{
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  margin-top: 20px ;
+}
+.price-area p{
+  display: inline;
+  text-align: center;
+  font-weight: 900;
+  padding: 0px 5%;
+  font-size: 30px;
+} .price-area span{
+  color: orange;
+}
+.text-area{
+  width: 100%;
+  padding: 2%;
+  background-color: rgba(204, 204, 204, 0.253);
+  border-radius: 1%;
+  box-shadow: inset;
+  margin: 20px 0px;
+}
+.text-area h2{
+  border-bottom: 5px solid red;
+}
+.reservation{
+  text-align: center;
+}
+.reservation input,select{
+  margin: 5px 20px;
+  
+}
+.reservation select.form-control:not([size]):not([multiple]) {
+  height: calc(2.25rem + 10px)!important;
+}

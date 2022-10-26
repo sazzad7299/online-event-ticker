@@ -2,96 +2,57 @@
 @section('main_content')
     <div class="container-fluid">
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">All Event</h1>
-        <a href="{{route('allEvent')}}"  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ><i
-                class=" text-white-50"></i>All Event</a>                  
+        <h1 class="h3 mb-0 text-gray-800">Add Hall/Center</h1>
+        <a href="{{route('viewHall')}}"  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ><em class=" text-white-50"></em>All Hall/Center</a>                  
     </div>
-        <form action="{{route('storeEvent')}}" method="post" enctype="multipart/form-data">
+        @if(Session::has('flash_message_error'))
+        <div class="alert alert-error alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button> 
+                <strong>{!! session('flash_message_error') !!}</strong>
+        </div>
+        @endif   
+        @if(Session::has('flash_message_success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button> 
+                <strong>{!! session('flash_message_success') !!}</strong>
+        </div>
+        @endif
+        <form action="{{route('addHall')}}" method="post" enctype="multipart/form-data">
             @csrf
             {{-- @include('backend.partials.messages') --}}
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" name="title" id="name"  placeholder="Enter Event Name" value="{{old('title')}}">
-              @error('title')
-              <span class="text-danger">{{$message}}</span>
-            @enderror
+              <input type="text" class="form-control" name="name" id="name"  placeholder="Enter Hall Name" required value="{{old('title')}}">
+
             </div>
 
             <div class="form-group">
               <label for="exampleInputPassword1">Description</label>
-              <textarea id="summary" name="detail" rows="8" cols="80" class="form-control" value="{{old('detail')}}"> </textarea>
-
-            </div>
+              <textarea id="summary" name="desc" rows="8" cols="80" class="form-control" value="{{old('detail')}}" required> </textarea>
+            </div> 
             <div class="form-group">
-              <label for="exampleInputPassword1">Venue</label>
-              <input type="text" class="form-control" name="venue" id="name" aria-describedby="emailHelp" value="{{old('venue')}}" placeholder=" Event Venue Name">
-
-            </div>
+                <label for="fname" class="control-label">Day Price:</label>
+                 <input type="number" class="form-control" name="dPrice" min="0" required>
+            </div> 
             <div class="form-group">
-              <label for="exampleInputPassword1">Event Start Date</label>
-              <input type="date" class="form-control " name="start_date" id="name" aria-describedby="emailHelp" value="{{old('start_date')}}" placeholder="End Date Of Event">
-              @error('start_date')
-              <span class="text-danger">{{$message}}</span>
-              @enderror
-              
-            </div>
+                <label for="fname" class="control-label">Night Price:</label>
+                 <input type="number" class="form-control" name="nPrice" min="0" required >
+            </div>  
             <div class="form-group">
-              <label for="exampleInputPassword1">Event End Date</label>
-              <input type="date" class="form-control " name="end_date" id="name" aria-describedby="emailHelp" value="{{old('end_date')}}" placeholder="End Date Of Event">
-
-              @error('end_date')
-              <span class="text-danger">{{$message}}</span>
-              @enderror
-            </div>
-            
+                <label for="fname" class="control-label">Fullday Price:</label>
+                 <input type="number" class="form-control" name="fPrice"  min="0" required>
+            </div>      
+          
             <div class="form-group">
-              <label for="exampleInputPassword1">Parent Category (optional)</label>
-              <select class="form-control" name="category_id">
-                <option value="">Please select a Parent category</option>
-                @forelse ($parent_categories as $category)
-                  <option value="{{ $category->id }}">{{ $category->title }}</option>
-                @empty
-                {{$message}}
-                @endforelse
-              </select>
-             
-
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Ticket Price <span style="color: #ccc">Per Person</span></label>
-              <input type="number" class="form-control " name="price" aria-describedby="emailHelp" value="{{old('seat')}}" >
-              @error('price')
-              <span class="text-danger">{{$message}}</span>
-              @enderror
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Seat</label>
-              <input type="number" class="form-control " name="seat" aria-describedby="emailHelp" value="{{old('seat')}}" >
-              @error('seat')
-              <span class="text-danger">{{$message}}</span>
-              @enderror
-            </div>
-            
-            <div class="form-group">
-                <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
-                <select name="status" class="form-control">
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-                </select>
-                @error('status')
-                <span class="text-danger">{{$message}}</span>
-                @enderror
-              </div>
-            <div class="form-group">
-              <label for="image">Event Image</label>
-              <input type="file" class="form-control" name="image" id="image" >
-              @error('image')
-                <span class="text-danger">{{$message}}</span>
-              @enderror
+              <label for="image">Hall/Center Image</label>
+              <input type="file" class="form-control" name="image" id="image" required >
             </div>
 
-
-            <button type="submit" class="btn btn-primary">Add Event</button>
+            <div class="form-group">
+                <label for="fname" class="control-label col-form-label">Enable:</label>
+                <input class="mt-2" type="checkbox"  name="status" id="status" value="1">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Hallroom</button>
           </form>
     </div>
 @endsection

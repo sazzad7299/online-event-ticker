@@ -80,6 +80,22 @@
         </div>
     </li>
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHall"
+            aria-expanded="true" aria-controls="collapseEvent">
+            <em class="fas fa-fw fa-wrench"></em>
+            <span>Hall</span>
+        </a>
+        <div id="collapseHall" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Hall</h6>
+                <a class="collapse-item" href="{{route('viewHall')}}">All Hall</a>
+                <a class="collapse-item" href="{{route('addHall')}}">Add Hall</a>
+            
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.users') }}">
             <em class="fas fa-users"></em>
             <span>Users</span>

@@ -58,6 +58,11 @@
                 About
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('viewHalls')}}" style="background-color:orange; border-radius:6px">
+                Book Now
+              </a>
+            </li>
 
             @guest
             <li class="nav-item">
@@ -114,6 +119,9 @@
 
         <li>
           <a class="page-scroll" href="{{route('show_cat_all')}}">Events</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="{{route('viewHalls')}}">Halls</a>
         </li>
         @guest
         <li>
