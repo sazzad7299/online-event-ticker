@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Hall;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -15,7 +16,8 @@ class IndexController extends Controller
         $sliderCount = Slider::where('status','1')->count();
         $event = Event::where('status','active')->whereDate('start_date','>=',Carbon::now())->take(6)->get();
         $events =Event::where('status','active')->whereDate('start_date','>=',Carbon::now())->orderBy('start_date', 'asc')->take(3)->get();
-        return view('index')->with(compact('sliders','sliderCount','event','events'));
+        $halls = Hall::where('status',1)->take(6)->get();
+        return view('index')->with(compact('sliders','sliderCount','event','events','halls'));
     }
 
     public function about(){
@@ -30,5 +32,5 @@ class IndexController extends Controller
         $events =Event::where('status','active')->whereDate('start_date','>=',Carbon::now())->orderBy('start_date', 'asc')->take(6)->get();
         return view('schedules')->with(compact('events'));
     }
-    
+
 }

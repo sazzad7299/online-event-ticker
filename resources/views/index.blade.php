@@ -2,28 +2,6 @@
 
 @section('content')
 @include('layouts.slider')
-
-    <!-- Coundown Section Start -->
-    <section class="countdown-timer section-padding">
-        <div class="container">
-          <div class="row text-center">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="heading-count">
-                <h2 class="wow fadeInDown" data-wow-delay="0.2s">Event Will Start In</h2>
-              </div>
-            </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="row time-countdown justify-content-center wow fadeInUp" data-wow-delay="0.2s">
-                <div id="clock" class="time-count"></div>
-              </div>
-              <a href="pricing.html" class="btn btn-common wow fadeInUp" data-wow-delay="0.3s">Add to My Calender</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Coundown Section End -->
-
-
       <!-- About Section Start -->
       <section id="about" class="section-padding">
         <div class="container">
@@ -31,7 +9,7 @@
             <div class="col-12">
               <div class="section-title-header text-center">
                 <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Our Latest Events</h1>
-                <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
+                <p class="wow fadeInDown" data-wow-delay="0.2s">Looking for a convenient way to sell tickets to your upcoming event? Look no further than our event ticket service! Our user-friendly platform makes it easy to list your event and sell tickets all in one place. Plus, our team is always on hand to provide support and answer any questions you may have. So why wait? Get started today and take the hassle out of selling tickets!</p>
               </div>
             </div>
           </div>
@@ -68,7 +46,7 @@
             <div class="col-12">
               <div class="section-title-header text-center">
                 <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Event Schedules</h1>
-                <p class="wow fadeInDown" data-wow-delay="0.2s">Hi, find your event which is match with your schedules <br> Enjoy your event</p>
+                <p class="wow fadeInDown" data-wow-delay="0.2s">Looking for a convenient way to sell tickets to your upcoming event? Look no further than our event ticket service! Our user-friendly platform makes it easy to list your event and sell tickets all in one place. Plus, our team is always on hand to provide support and answer any questions you may have. So why wait? Get started today and take the hassle out of selling tickets!</p>
               </div>
             </div>
           </div>
@@ -120,9 +98,48 @@
       </section>
       <!-- Schedule Section End -->
 
+            <!-- About Section Start -->
+            <section id="about" class="section-padding">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="section-title-header text-center">
+                        <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Our Hallrooms</h1>
+                        <p class="wow fadeInDown" data-wow-delay="0.2s">
+                            Our hall booking service is the perfect way to ensure that your next event is a success. We have a variety of halls to choose from, all of which are perfect for a variety of events. Whether you're planning a wedding, a corporate event, or a private party, we have a hall that will suit your needs. We also have a team of experienced event planners who can help you plan and execute your event to perfection. Contact us today to learn more about our hall booking service and to start planning your next event.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    @foreach($halls as $item)
+                    <div class="col-lg-4 col-md-6 col-xs-12">
+                        <div class="blog-item">
+                        <div class="blog-image">
+                            <a href="{{ url('reservasion/hall-findorfaild/'.$item->id)}}">
+                            <img class="img-fluid" src="{{ asset('assets/img/hall/'.$item->image) }}" alt="">
+                            </a>
+                        </div>
+                        <div class="descr">
+                            <div class="tag"><a href="{{ url('/reservasion/hall-findorfaild/'.$item->id) }}">View Details</a></div>
+                            <h3 class="title">
+                            <a href="{{ url('reservasion/hall-findorfaild/'.$item->id)}}">
+                                {{ $item->name }}
+                            </a>
+                            </h3>
+                        </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+                  </div>
+                </div>
+              </section>
+              <!-- About Section End -->
+
 
       <!-- Blog Section Start -->
-      {{-- <section id="blog" class="section-padding">
+      <section id="blog" class="section-padding">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -199,7 +216,7 @@
             </div>
           </div>
         </div>
-      </section>  --}}
+      </section>
       <!-- Blog Section End -->
 
       <!-- Subscribe Area Start -->

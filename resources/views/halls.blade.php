@@ -23,7 +23,7 @@
                 <div class="descr">
                     <div class="tag"><a href="{{ url('/reservasion/hall-findorfaild/'.$item->id) }}">View Details</a></div>
                     <h3 class="title">
-                    <a href="single-blog.html">
+                    <a href="{{ url('reservasion/hall-findorfaild/'.$item->id)}}">
                         {{ $item->name }}
                     </a>
                     </h3>
@@ -33,8 +33,8 @@
         @endforeach
       </div>
     </div>
-  </section> 
+  </section>
 
-            
-        
+
+
 @endsection

@@ -32,11 +32,11 @@
                     <a class="dropdown-item" href="{{route('single_cat_page',['id'=>$cat->id])}}">{{$cat->title}}</a>
                     @endforeach
                   </div>
-                 
+
               </li>
               </a>
             </li>
-            
+
             {{-- <li class="nav-item">
               <a class="nav-link" href="{{route('show_cat_all')}}">
                 Events
@@ -59,8 +59,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('viewHalls')}}" style="background-color:orange; border-radius:6px">
-                Book Now
+              <a class="nav-link" href="{{route('viewHalls')}}">
+               Halls
               </a>
             </li>
 
@@ -69,7 +69,7 @@
               <a class="nav-link" href="{{ route('login') }}">
                 Log in
               </a>
-            </li> 
+            </li>
             @endguest
             @auth
             <li class="nav-item">
@@ -95,11 +95,11 @@
               </a>
             </li>
             @endauth
-            
+
           </ul>
         </div>
       </div>
-      
+
 
       <!-- Mobile Menu Start -->
       <ul class="mobile-menu">
@@ -128,7 +128,7 @@
           <a class="page-scroll" href="{{ route('login') }}">
             Log in
           </a>
-        </li> 
+        </li>
         @endguest
         @auth
         <li>

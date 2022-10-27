@@ -74,24 +74,24 @@
         </div>
       </footer>
       <!-- Footer Section End -->
-  
+
       <div id="copyright">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
               <div class="site-info">
-                <p>©2022 Designed and Developed by <a href="" rel="nofollow">City University</a></p>
-              </div>      
+                <p>©2022 Developed by <a href="https://itsoftrain.com/" rel="nofollow" target="_blank">ITSOFTTRAIN</a></p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-  
+
       <!-- Go to Top Link -->
       <a href="#" class="back-to-top">
           <i class="lni-chevron-up"></i>
       </a>
-  
+
       <div id="preloader">
         <div class="sk-circle">
           <div class="sk-circle1 sk-child"></div>
