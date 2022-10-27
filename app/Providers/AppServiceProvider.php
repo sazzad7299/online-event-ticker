@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        $header_categories=Category::orderBy('id','desc')->get();
+        $header_categories=Category::latest()->get();
         view()->share('header_categories', $header_categories);
     }
 }

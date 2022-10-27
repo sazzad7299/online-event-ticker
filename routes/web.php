@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\EventController;
 use App\Http\Controllers\backend\CategoriesController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\frontend\CategoriesShowController;
 
@@ -125,7 +126,7 @@ Route::prefix('admin')->group(function(){
         Route::get('/orders',[AdminController::class,'orders'])->name('admin.orders');
         Route::get('/orders/status/{id}/{status}',[AdminController::class,'status'])->name('admin.status');
         Route::get('/orders/details/{id}',[AdminController::class, 'orderDetails'])->name('admin.details');
-
+        Route::resources(['blog'=> BlogController::class]);
 
 
     });

@@ -40,7 +40,7 @@
                 <h6 class="collapse-header">Manage Slider:</h6>
                 <a class="collapse-item" href="{{ route('viewslider') }}">All Slider</a>
                 <a class="collapse-item" href="{{ route('addslider') }}">Add Slider</a>
-                
+
             </div>
         </div>
     </li>
@@ -57,8 +57,8 @@
                 <h6 class="collapse-header">Custom Utilities:</h6>
                 <a class="collapse-item" href="{{route('allCategory')}}">All Category</a>
                 <a class="collapse-item" href="{{route('addCategoryForm')}}">Add Category</a>
-              
-                
+
+
             </div>
         </div>
     </li><!------------------ Product------------------------->
@@ -75,7 +75,7 @@
                 <h6 class="collapse-header">Event</h6>
                 <a class="collapse-item" href="{{route('allEvent')}}">All Event</a>
                 <a class="collapse-item" href="{{route('addEventForm')}}">Add Event</a>
-            
+
             </div>
         </div>
     </li>
@@ -91,7 +91,23 @@
                 <h6 class="collapse-header">Hall</h6>
                 <a class="collapse-item" href="{{route('viewHall')}}">All Hall</a>
                 <a class="collapse-item" href="{{route('addHall')}}">Add Hall</a>
-            
+
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlog"
+            aria-expanded="true" aria-controls="collapseEvent">
+            <em class="fas fa-fw fa-wrench"></em>
+            <span>BLOG</span>
+        </a>
+        <div id="collapseBlog" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">BLOGS</h6>
+                <a class="collapse-item" href="{{route('blog.index')}}">Blog List</a>
+                <a class="collapse-item" href="{{route('blog.create')}}">Add blog</a>
+
             </div>
         </div>
     </li>
@@ -107,10 +123,10 @@
             <span>Orders</span>
         </a>
     </li>
-    
-    
 
-    
+
+
+
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
