@@ -139,7 +139,7 @@
 
 
       <!-- Blog Section Start -->
-      <section id="blog" class="section-padding">
+      <section id="blog" class="section-padding" style="display: none">
         <div class="container">
           <div class="row">
             <div class="col-12">

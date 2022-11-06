@@ -95,14 +95,14 @@
             </div>
         </div>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" style="display: none">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlog"
             aria-expanded="true" aria-controls="collapseEvent">
             <em class="fas fa-fw fa-wrench"></em>
             <span>BLOG</span>
         </a>
         <div id="collapseBlog" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
+            data-parent="#accordionSidebar" >
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">BLOGS</h6>
                 <a class="collapse-item" href="{{route('blog.index')}}">Blog List</a>

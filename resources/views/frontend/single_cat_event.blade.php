@@ -13,8 +13,8 @@
             <img class="img-fluid" src="{{ asset('images/event/'.$item->image) }}" alt="">
             <div class="about-text">
               <h3><a href="#">{{ $item->title }}</a></h3>
-              <h5>  {{ $item->price }}৳</h5>
-              <p>{!! Str::limit($item->detail, 200)  !!}</p> <br>
+              <h5>Price:{{ $item->price }}৳   Seat:{{ $item->seat }} </h5>
+              
               @if($item->seat ==0)
               <button type="button" class="btn btn-common btn-rm" disabled>Not Available</button>
               @else
@@ -34,7 +34,7 @@
              {{$event->links()}}
         </div>
       </div>
-        
+
     </div>
 </div>
 

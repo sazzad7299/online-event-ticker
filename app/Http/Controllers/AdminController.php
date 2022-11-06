@@ -26,7 +26,7 @@ class AdminController extends Controller
         $id = Auth::user()->id;
         $user = DB::table('admins')->where(['id'=>$id])->first();
         return view('backend.profile')->with(compact('user'));
-        
+
     }
     public function updateDetails(Request $request)
     {
@@ -41,7 +41,7 @@ class AdminController extends Controller
     }
     public function chkPassword(Request $request){
         $data = $request->all();
-        
+
         $user = DB::table('admins')->where(['id'=>1])->first();
         // dd($userCount);
         if(Hash::check($request->current_pwd,$user->password)){
@@ -54,7 +54,7 @@ class AdminController extends Controller
     {
         if($request->isMethod('post')){
             $data =$request->all();
-            
+
         $id = Auth::user()->id;
         $user = DB::table('admins')->where(['id'=>$id])->first();
         if(Hash::check($request->current_pwd,$user->password)){
@@ -89,7 +89,7 @@ class AdminController extends Controller
     }
     public function status($id,$status)
     {
-        
+
         $mainorder = Orders::findOrFail($id);
         if ($mainorder->status == "complete"){
             return redirect()->route('admin.orders')->with('message','This Booking is Already Completed');

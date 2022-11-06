@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 27, 2022 at 06:10 PM
+-- Generation Time: Nov 01, 2022 at 12:33 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -47,6 +47,34 @@ CREATE TABLE IF NOT EXISTS `admins` (
 
 INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'sazzad', 'sazzad@gmail.com', NULL, '$2y$10$qWS/VWFGmNLUK83OqzuDcemQDUaBOrAsLYcFyZ4jssuJdMtANoE3W', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blogs`
+--
+
+DROP TABLE IF EXISTS `blogs`;
+CREATE TABLE IF NOT EXISTS `blogs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` mediumtext COLLATE utf8mb4_unicode_ci,
+  `cat_id` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `title`, `slug`, `image`, `description`, `cat_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Est fuga Aut conseq', 'est-fuga-aut-conseq', '1666902649.png', 'Saepe assumenda dolo.rtrtyrtyrety', 1, 1, '2022-10-27 14:30:49', '2022-10-27 14:30:49'),
+(2, 'Voluptatem lorem quo', 'voluptatem-lorem-quo', '1666905024.jpg', 'Et officia iusto vol.frdhfhdfghdfghdfgh', 1, 1, '2022-10-27 15:10:24', '2022-10-27 15:10:24');
 
 -- --------------------------------------------------------
 
@@ -114,14 +142,15 @@ CREATE TABLE IF NOT EXISTS `events` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `title`, `detail`, `venue`, `image`, `price`, `category_id`, `status`, `end_date`, `start_date`, `seat`, `created_at`, `updated_at`) VALUES
-(1, 'Trade Shows and Expos', '<p style=\"margin-right: 0px; margin-bottom: 37px; margin-left: 0px; font-size: 18px; line-height: 1.5; font-family: &quot;Real Text&quot;, Manrope, sans-serif; color: rgb(26, 26, 26);\"><span style=\"line-height: 1.5;\">Trade shows and expos aim to present new products and services from a variety of related brands in a professional manner. Typically these types of events have a theme that ties the booths together. These types of events are almost always in-person because of the nature of hands-on opportunities and trade show booths.</span></p><p style=\"margin-right: 0px; margin-bottom: 37px; margin-left: 0px; font-size: 18px; line-height: 1.5; font-family: &quot;Real Text&quot;, Manrope, sans-serif; color: rgb(26, 26, 26);\"><span style=\"line-height: 1.5;\">Trade shows and expos are especially useful for prospects who haven’t yet discovered your product or are looking to receive additional information in person. This event type is useful for companies looking to increase the number of in-person interactions they have with their customer base.</span></p><p style=\"margin-right: 0px; margin-bottom: 37px; margin-left: 0px; font-size: 18px; line-height: 1.5; font-family: &quot;Real Text&quot;, Manrope, sans-serif; color: rgb(26, 26, 26);\"><span style=\"line-height: 1.5;\">Trade show and expo event organizers often prioritize the following:</span></p><ul style=\"margin: -30px 0px 0px; font-size: clamp(16px, 2vw, 20px); line-height: 1.5; padding: 0px 0px 37px 30px; color: rgb(26, 26, 26); font-family: &quot;Real Text&quot;, Manrope, sans-serif;\"><li aria-level=\"1\" style=\"padding: 0px; position: relative; color: var(--alt); font-size: 18px !important;\">Raising brand awareness</li><li aria-level=\"1\" style=\"padding: 0px; position: relative; color: var(--alt); font-size: 18px !important;\">Offsetting costs via sponsorships</li><li aria-level=\"1\" style=\"padding: 0px; position: relative; color: var(--alt); font-size: 18px !important;\">Driving revenue through ticket sales</li><li aria-level=\"1\" style=\"padding: 0px; position: relative; color: var(--alt); font-size: 18px !important;\">Boosting lead generation</li></ul>', 'Dhaka', '1666810352-.png', 299, 1, 'active', '2022-10-29', '2022-10-28', 299, '2022-10-26 12:52:32', '2022-10-26 12:52:32');
+(1, 'Trade Shows and Expos', '<p style=\"margin-right: 0px; margin-bottom: 37px; margin-left: 0px; font-size: 18px; line-height: 1.5; font-family: &quot;Real Text&quot;, Manrope, sans-serif; color: rgb(26, 26, 26);\"><span style=\"line-height: 1.5;\">Trade shows and expos aim to present new products and services from a variety of related brands in a professional manner. Typically these types of events have a theme that ties the booths together. These types of events are almost always in-person because of the nature of hands-on opportunities and trade show booths.</span></p><p style=\"margin-right: 0px; margin-bottom: 37px; margin-left: 0px; font-size: 18px; line-height: 1.5; font-family: &quot;Real Text&quot;, Manrope, sans-serif; color: rgb(26, 26, 26);\"><span style=\"line-height: 1.5;\">Trade shows and expos are especially useful for prospects who haven’t yet discovered your product or are looking to receive additional information in person. This event type is useful for companies looking to increase the number of in-person interactions they have with their customer base.</span></p><p style=\"margin-right: 0px; margin-bottom: 37px; margin-left: 0px; font-size: 18px; line-height: 1.5; font-family: &quot;Real Text&quot;, Manrope, sans-serif; color: rgb(26, 26, 26);\"><span style=\"line-height: 1.5;\">Trade show and expo event organizers often prioritize the following:</span></p><ul style=\"margin: -30px 0px 0px; font-size: clamp(16px, 2vw, 20px); line-height: 1.5; padding: 0px 0px 37px 30px; color: rgb(26, 26, 26); font-family: &quot;Real Text&quot;, Manrope, sans-serif;\"><li aria-level=\"1\" style=\"padding: 0px; position: relative; color: var(--alt); font-size: 18px !important;\">Raising brand awareness</li><li aria-level=\"1\" style=\"padding: 0px; position: relative; color: var(--alt); font-size: 18px !important;\">Offsetting costs via sponsorships</li><li aria-level=\"1\" style=\"padding: 0px; position: relative; color: var(--alt); font-size: 18px !important;\">Driving revenue through ticket sales</li><li aria-level=\"1\" style=\"padding: 0px; position: relative; color: var(--alt); font-size: 18px !important;\">Boosting lead generation</li></ul>', 'Dhaka', '1666810352-.png', 299, 1, 'active', '2022-10-29', '2022-10-28', 299, '2022-10-26 12:52:32', '2022-10-26 12:52:32'),
+(2, 'Baxter Snow', 'fgdfhdfgh', 'Carter Grimes', '1667305592-.png', 35, 1, 'active', '2022-11-19', '2022-11-01', 35, '2022-11-01 06:26:32', '2022-11-01 06:26:32');
 
 -- --------------------------------------------------------
 
@@ -182,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -201,7 +230,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2022_01_24_124739_create_orders_event_table', 1),
 (11, '2022_01_27_171937_create_admins_table', 1),
 (12, '2022_03_15_161855_create_halls_table', 2),
-(13, '2022_03_18_100650_hallreq', 2);
+(13, '2022_03_18_100650_hallreq', 2),
+(14, '2022_10_27_192233_create_blogs_table', 3);
 
 -- --------------------------------------------------------
 
@@ -345,7 +375,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -374,7 +404,8 @@ INSERT INTO `users` (`id`, `name`, `phone`, `email`, `email_verified_at`, `passw
 (20, 'Jolene Hartman', NULL, 'xypodareq@mailinator.com', NULL, '$2y$10$2RVX8h8OnXYSeR3EdDOqjOF9CqzPuTCJEDoAFYPi/hUOlS.bUn8MK', NULL, '2022-10-26 15:37:04', '2022-10-26 15:37:04'),
 (21, 'Bell Baird', NULL, 'bamihagil@mailinator.com', NULL, '$2y$10$6D/s55UldlcTwicCvZPdFe/t4ZnreZI1HkmIHm9K.aI1AibgNm0A2', NULL, '2022-10-26 15:38:04', '2022-10-26 15:38:04'),
 (22, 'Denise Davenport', 15, 'cejabic@mailinator.com', '2022-10-26 15:48:13', '$2y$10$Fn6TL.D2oPRr/QNKxy058.KeuxvThyCgXxqkMfBmj1Fl4kYEsXUwC', NULL, '2022-10-26 15:40:23', '2022-10-26 15:48:13'),
-(23, 'Charity Robertson', 78, 'vygodywepu@mailinator.com', '2022-10-26 15:55:44', '$2y$10$4E7HbzFrYJxv5hBagszEYetyZoFOumqGuUiX.CjFWJkRdqY/tAUTq', NULL, '2022-10-26 15:54:57', '2022-10-26 15:55:44');
+(23, 'Charity Robertson', 78, 'vygodywepu@mailinator.com', '2022-10-26 15:55:44', '$2y$10$4E7HbzFrYJxv5hBagszEYetyZoFOumqGuUiX.CjFWJkRdqY/tAUTq', NULL, '2022-10-26 15:54:57', '2022-10-26 15:55:44'),
+(24, 'Yolanda Rodgers', NULL, 'vepuqobemo@mailinator.com', NULL, '$2y$10$dD0hLLddFF6E1dGeuqczMOHOf53BqT/Ir9hbUWYRMfSQv8MU.bfSu', NULL, '2022-11-01 06:29:55', '2022-11-01 06:29:55');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

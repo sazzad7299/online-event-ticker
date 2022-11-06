@@ -21,19 +21,19 @@ class EventController extends Controller
     public function allEvent()
     {
         $events =Event::all();
-      
+
         return view('backend.event.index',compact('events'));
     }
     public function addeventForm()
     {
         $parent_categories = Category::where('parent_id',NULL)->orderBy('title','ASC')->get();
         $message = "No parent category";
-        
+
         return view('backend.event.create',compact('parent_categories','message'));
     }
     public function storeEvent(Request $request)
     {
-       
+
         $request->validate([
             'title'=>'required|unique:events,title',
             'image'=>'required',
@@ -44,19 +44,19 @@ class EventController extends Controller
 
 
         ]);
-       
+
         $event = new Event();
-     
+
         if ($request->image) {
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $name = time() . '-' . $event->id . '.' . $ext;
             $path = "images/event";
             $file->move($path, $name);
-            
+
         }
-         
-         
+
+
         $event->title = $request->title;
         $event->detail = $request->detail;
         $event->venue = $request->venue;
@@ -74,7 +74,7 @@ class EventController extends Controller
         return back()->with('success','Event added successfully');
 
     }
-   
+
     public function eventEdit ($id)
     {
         $categories = Category::where('parent_id',NULL)->orderBy('title','ASC')->get();
@@ -88,7 +88,7 @@ class EventController extends Controller
             'title'=>'required',
 
         ]);
-       
+
         $event = Event::find($id);
         $event->title = $request->title;
         $event->detail = $request->detail;
@@ -101,7 +101,7 @@ class EventController extends Controller
         $event->status = $request->status;
         $event->category_id = $request->category_id;
         $event->save();
-     
+
         if ($request->image) {
             if(File::exists('images/event/'.$event->image)){
                 File::delete('images/event/'.$event->image);
@@ -112,14 +112,13 @@ class EventController extends Controller
             $name = time() . '-' . $event->id . '.' . $ext;
             $path = "images/event";
             $file->move($path, $name);
-            $event->photo = $name;
             $event->image = $name;
 
 
-            
-        }        
-     
-       
+
+        }
+
+
         $event->save();
         return redirect()->route('allEvent')->with('success','Event update successfully');;
     }
@@ -132,9 +131,9 @@ class EventController extends Controller
 
         $eventDetails = Event::where(['id'=>$id])->count();
         $eventDetails=json_decode(json_encode($eventDetails));
-        
 
-        
+
+
         if($eventDetails==0){
             abort(404);
         }
@@ -151,7 +150,7 @@ class EventController extends Controller
     public function cart($id)
     {
         $event = Event::where(['id'=>$id])->first();
-        
+
         Cart::add($id, $event->title, 1, $event->price,[],0)->associate('App\Models\Event');
         return redirect()->route('viewCart');
     }
@@ -183,15 +182,15 @@ class EventController extends Controller
     public function checkout()
     {
         if(Auth::check()){
-            
-            
+
+
         // return $carts;
         return view('checkout');
         }
         else {
             return redirect()->route('login');
         }
-        
+
     }
     public function pay(Request $request)
     {
@@ -200,7 +199,7 @@ class EventController extends Controller
         // foreach($carts as $cart){
         //     $order = new Orders;
         //     $order->user_id =$user_id;
-            
+
         //     $order->phone= '92308928';
         //     $order->grand_total= Cart::total();
         //     $order->payment_method="hello";
